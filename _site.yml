@@ -1,0 +1,18 @@
+name: "Final Project for Data Science 1"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "Data Exploration"
+      href: Data-Exploration.html
+    - text: "Data Analysis"
+      href: Data-Analysis.html
+    - text: "Interactive Maps"
+      href: Interactive-Maps.html 
+    - text: "Project Report"
+      href: Project-Report.html
+    - icon: fa-github fa-lg
+      href: https://github.com/kianakchanmph/twindemic_analysis
+output:
+  html_document:
+    theme: flatly

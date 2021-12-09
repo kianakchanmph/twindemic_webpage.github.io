@@ -1,0 +1,52 @@
+---
+title: "Project Report"
+output: 
+  html_document:
+    cold_folding: hide
+    toc: true
+    toc_float: true
+---
+
+Here we sum everything we did together. 
+
+# Introduction: 
+## Motivation
+Provide an overview of the project goals and motivation.
+As we enter the influenza season this Winter while continuing to fight against the COVID-19 pandemic, we have seen a continued urgency from public health and government officials alike, to encourage New Yorkers to get vaccinated for both influenza and COVID-19. This year in particular, experts are concerned that this year's flu season may be even more severe, due to an unusually mild season last year (Spantideas et al, 2021). Now, with the rise of a new COVID variant, city and public health leaders are pushing for mandatory vaccination requirements and continued COVID-19 precautions to prepare for a potential “Twindemic,” or the simultaneous outbreak of influenza and COVID-19. A Twindemic has the potential to crowd emergency rooms, threaten the public health of our communities, and burden our healthcare system. Therefore, for this project, we seek to conduct an exploratory analysis between COVID-19 and influenza in New York City.  Specifically, we will examine the relationship between COVID-19 and influenza uptake by zip code and sociodemographic factors in New York City through data visualizations and regression analyses. 
+ 
+# Related work: 
+Anything that inspired you, such as a paper, a website, or something we discussed in class.
+New York City was the epicenter of  COVID-19 during the early stages of the COVID-19 pandemic, with 12,589.2 cases and 404.5 deaths per 100,000 residents recorded in September of 2021 (Moreland et al., 2021). Recently, alongside entering the winter season and the emergence of yet another COVID-19 variant, news outlets and academic sources alike have warned of a threat of a Twindemic. The urgency to get vaccinated for not only COVID-19, but also influenza, is prevalent now more than ever among city officials and public health professionals to curb the spread of two infectious diseases. The COVID-19 pandemic shed light on stark racial/ethnic health disparities related to COVID-19 illness and mortality. Furthermore, vaccine hesitancy has exacerbated these disparities, with more people of color disproportionately affected. We aim for the results of our analyses of the COVID-19 and influenza trends in New York City to inform public health programs and policies to improve vaccination efforts to vulnerable communities. 
+ 
+# Initial questions
+What questions are you trying to answer? How did these questions evolve over the course of the project? What new questions did you consider in the course of your analysis?
+A few main questions we had for our exploratory analysis on COVID-19 and influenza in New York City included: 
+Option: What is the relationship between COVID and Flu Vaccination Uptake by Zipcode and Sociodemographic Factors in NYC?
+Option:  What is the difference in COVID and Flu vaccine uptake in NYC, according to  associated sociodemographic factors?
+Option: What are the patterns observed for COVID and Flu vaccine uptake in New York by zip code?
+Option: Difference in COVID and Flu vaccine uptake in NYC and associated sociodemographic factors.
+ 
+ 
+# Data: Source, scraping method, cleaning, etc.
+<li>New York City Locations Providing Seasonal Flu Vaccine https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz
+<li>DOHMH COVID Antibody by Borough
+https://data.cityofnewyork.us/Health/DOHMH-COVID-19-Antibody-by-Borough/x98t-3bbk 
+<li>DOHMH COVID Antibody by Age
+https://data.cityofnewyork.us/Health/DOHMH-COVID-Antibody-by-Age/7umd-hdjb 
+<li>DOHMH COVID Antibody by Neighbourhood Poverty
+https://data.cityofnewyork.us/Health/DOHMH-COVID-19-Antibody-by-Neighborhood-Poverty/vajk-p37e 
+ 
+Restricting on adults since vaccines weren’t available to children until recently. Therefore, we want to examine the COVID-19 outcomes among adults in this analysis. 
+Exploratory analysis: Visualizations, summaries, and exploratory statistical analyses. Justify the steps you took, and show any major changes to your ideas.
+ 
+ 
+# Additional analysis
+If you undertake formal statistical analyses, describe these in detail
+ 
+ 
+# Discussion
+What were your findings? Are they what you expect? What insights into the data can you make?
+
+
+# Limitation
+Flu and covid vaccine data did not overlap, explain

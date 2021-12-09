@@ -1,0 +1,10 @@
+---
+title: "Interactive Maps"
+output: 
+  html_document:
+    cold_folding: hide
+    toc: true
+    toc_float: true
+---
+
+Show maps of New York City by doses(eg) for flu and Covid...

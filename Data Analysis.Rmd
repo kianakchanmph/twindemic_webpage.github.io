@@ -1,0 +1,10 @@
+---
+title: "Data Analysis"
+output: 
+  html_document:
+    cold_folding: hide
+    toc: true
+    toc_float: true
+---
+
+If we decide to show some relationship or do a statistical test, this may be a good place to show that.

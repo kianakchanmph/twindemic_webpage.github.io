@@ -1,0 +1,9 @@
+---
+title: "Data Exploration"
+output: 
+  html_document:
+    cold_folding: hide
+    toc: true
+    toc_float: true
+---
+This page provides information on how we did the data exploration...plan to insert graphs showing variables of interest.
