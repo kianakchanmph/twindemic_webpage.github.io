@@ -13,8 +13,8 @@
 
 <title>Data Analysis</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -333,9 +333,6 @@ div.tocify {
   <a href="Data-Analysis.html">Data Analysis</a>
 </li>
 <li>
-  <a href="Interactive-Maps.html">Interactive Maps</a>
-</li>
-<li>
   <a href="Project-Report.html">Project Report</a>
 </li>
 <li>
@@ -366,8 +363,8 @@ div.tocify {
 </div>
 
 
-<p>If we decide to show some relationship or do a statistical test, this may be a good place to show that.</p>
-<p>#Clustering analysis</p>
+<div id="clustering-analysis" class="section level1">
+<h1>Clustering analysis</h1>
 <pre class="r"><code>library(maptools)</code></pre>
 <pre><code>## Loading required package: sp</code></pre>
 <pre><code>## Checking rgeos availability: FALSE
@@ -378,26 +375,20 @@ div.tocify {
 ##      which has a restricted licence. It is disabled by default;
 ##      to enable gpclib, type gpclibPermit()</code></pre>
 <pre class="r"><code>library(spatstat)</code></pre>
-<pre><code>## Warning: package &#39;spatstat&#39; was built under R version 4.1.2</code></pre>
 <pre><code>## Loading required package: spatstat.data</code></pre>
-<pre><code>## Warning: package &#39;spatstat.data&#39; was built under R version 4.1.2</code></pre>
 <pre><code>## Loading required package: spatstat.geom</code></pre>
-<pre><code>## Warning: package &#39;spatstat.geom&#39; was built under R version 4.1.2</code></pre>
 <pre><code>## spatstat.geom 2.3-1</code></pre>
 <pre><code>## Loading required package: spatstat.core</code></pre>
-<pre><code>## Warning: package &#39;spatstat.core&#39; was built under R version 4.1.2</code></pre>
 <pre><code>## Loading required package: nlme</code></pre>
 <pre><code>## Loading required package: rpart</code></pre>
 <pre><code>## spatstat.core 2.3-2</code></pre>
 <pre><code>## Loading required package: spatstat.linnet</code></pre>
-<pre><code>## Warning: package &#39;spatstat.linnet&#39; was built under R version 4.1.2</code></pre>
 <pre><code>## spatstat.linnet 2.3-0</code></pre>
 <pre><code>## 
 ## spatstat 2.2-0       (nickname: &#39;That&#39;s not important right now&#39;) 
 ## For an introduction to spatstat, type &#39;beginner&#39;</code></pre>
 <pre class="r"><code>library(sf)</code></pre>
-<pre><code>## Warning: package &#39;sf&#39; was built under R version 4.1.2</code></pre>
-<pre><code>## Linking to GEOS 3.9.1, GDAL 3.2.1, PROJ 7.2.1</code></pre>
+<pre><code>## Linking to GEOS 3.8.1, GDAL 3.2.1, PROJ 7.2.1</code></pre>
 <pre class="r"><code>knitr::opts_chunk$set(
   fig.width = 6,
   fig.asp = .9,
@@ -410,19 +401,23 @@ NYC_Flu_Locations &lt;- ppp(mydata[,13], mydata[,12], c(-74.23442287,-73.6884338
 <pre><code>## Warning: data contain duplicated points</code></pre>
 <pre class="r"><code>plot(NYC_Flu_Locations)</code></pre>
 <p><img src="Data-Analysis_files/figure-html/unnamed-chunk-2-1.png" width="90%" /></p>
-<p>#This is running the K function test</p>
+</div>
+</div>
+<div id="this-is-running-the-k-function-test" class="section level1">
+<h1>This is running the K function test</h1>
 <pre class="r"><code>L &lt;- envelope(NYC_Flu_Locations, Lest, nsim = 10, rank = 2, global = T)</code></pre>
 <pre><code>## Generating 10 simulations of CSR  ...
 ## 1, 2, 3, 4, 5, 6, 7, 8, 9,  10.
 ## 
 ## Done.</code></pre>
-<p>#Plot L function with Main Title and x-/y-axis labels</p>
+</div>
+<div id="plot-l-function-with-main-title-and-x-y-axis-labels" class="section level1">
+<h1>Plot L function with Main Title and x-/y-axis labels</h1>
 <pre class="r"><code>plot(L, 
      main = &quot;NYC Flu Locations Clustering Results&quot;, 
      ylab = &quot;Density Function&quot;,
      xlab = &quot;Distance&quot;)</code></pre>
 <p><img src="Data-Analysis_files/figure-html/unnamed-chunk-4-1.png" width="90%" /></p>
-</div>
 <div id="covid-clustering" class="section level2">
 <h2>COVID CLUSTERING</h2>
 <pre class="r"><code>mydata2 &lt;- read.csv(&quot;./data/COVID_NYC_locations_1.csv&quot;) 
@@ -442,6 +437,9 @@ NYC_COVID_Locations &lt;- ppp(mydata2[,6], mydata2[,5], c(-74.23538,-73.71330), 
      ylab = &quot;Density Function&quot;,
      xlab = &quot;Distance&quot;)</code></pre>
 <p><img src="Data-Analysis_files/figure-html/unnamed-chunk-7-1.png" width="90%" /></p>
+<p>The number of locations for Flu vaccinations is a bit more densely populated in lower and mid Manhattan compared to the same area in the number of locations for COVID vaccinations. Comparatively, we see that there are generally more locations for COVID vaccinations in Queens, especially in Far Rockaway, and in Brooklyn. This could be due to the demographic of the population living in these areas, as COVID-19 has disproportionately affected Black communities.</p>
+<p>The K function is used to identify clustering, randomness, or regularity among events in a spatial point pattern. Based on both Ripley K graphs, we see that at all distances, the Lobs(r), which is the observed spatial pattern, is higher than Ltheo(r) , which is the expected random spatial pattern. The Lobs(r) also does not intersect at any point with the expected line. This shows there is statistically significant clustering at smaller distances, displaying a clustering pattern. Due to this clustering pattern, there is not a uniform distribution and we see that there are groups of more COVID and Flu vaccination locations in specific areas while other areas like Staten Island and the parts of Queens are lacking. However, NYCHOH has done a good job on utilizing neighborhood and family owned pharmacies, corporation pharmacies such as Walgreens, as well as mobile vans (for COVID vaccines), to provide access to the vaccines across NYC.</p>
+</div>
 </div>
 
 
