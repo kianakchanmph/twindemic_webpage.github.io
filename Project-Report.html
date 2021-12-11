@@ -13,8 +13,8 @@
 
 <title>Project Report</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -370,17 +370,19 @@ div.tocify {
 <h1>Initial questions</h1>
 <p>A few main questions we had for our exploratory analysis on COVID-19 and influenza in New York City included: * What is the relationship between COVID and Flu Vaccination Uptake by Zipcode and Sociodemographic Factors in NYC? * Option: What is the difference in COVID and Flu vaccine uptake in NYC, according to associated sociodemographic factors? * Option: What are the patterns observed for COVID and Flu vaccine uptake in New York by zip code? * Option: Difference in COVID and Flu vaccine uptake in NYC and associated sociodemographic factors.</p>
 </div>
-<div id="data-source-scraping-method-cleaning-etc." class="section level1">
-<h1>Data: Source, scraping method, cleaning, etc.</h1>
-<div id="nyc-health-covid-19" class="section level2">
-<h2>NYC Health COVID-19</h2>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<div id="nyc-health-covid-19" class="section level3">
+<h3>NYC Health COVID-19</h3>
 <p>The NYC Department of Health and Mental Hygiene (NYC DOH) classifies the start of the COVID-19 outbreak in NYC by its first lab-confirmed case on February 29, 2020. Cases of COVID-19 included in their datasets are considered “confirmed” cases, or cases with a positive result from a molecular test. NYC DOH data on COVID-19 vaccines come from the Citywide Immunization Registry (CIR), which tracks immunizations for all NYC residents. A person is considered fully vaccinated if they have received both doses of the Moderna or Pfizer vaccine series, or received one dose of the Johnson &amp; Johnson/Janssen vaccine series. There is currently no data on COVID-19 boosters. The NYC DOH COVID-19 data can be found here, and the COVID-19 vaccination data can be found here.</p>
-New York City Locations Providing Seasonal Flu Vaccine
-<li>
+</div>
+<div id="new-york-city-locations-providing-seasonal-flu-vaccine" class="section level3">
+<h3>New York City Locations Providing Seasonal Flu Vaccine</h3>
 <p><a href="https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz" class="uri">https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz</a></p>
-<p>Census Data</p>
+</div>
+<div id="census-data" class="section level3">
+<h3>Census Data</h3>
 <p>ZIP Code Data We also identified a datase that provided the corresponding latitude and longitude for each ZIP code, which we filtered to only include the ZIP codes relevant to our analyses of NYC.</p>
-<li>
 <p><a href="https://gist.github.com/erichurst/7882666" class="uri">https://gist.github.com/erichurst/7882666</a></p>
 <p>Restricting on adults since vaccines weren’t available to children until recently. Therefore, we want to examine the COVID-19 outcomes among adults in this analysis. Exploratory analysis: Visualizations, summaries, and exploratory statistical analyses. Justify the steps you took, and show any major changes to your ideas.</p>
 </div>
