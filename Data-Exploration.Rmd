@@ -1,57 +1,14 @@
 ---
-title: "Project Report"
+title: "Data Exploration"
 output: 
   html_document:
     code_folding: hide
     toc: true
     toc_float: true
+always_allow_html: true
 ---
-<br></br>
 
-# Introduction: 
-<br></br>
-
-### Motivation
-
-As we enter the influenza season this Winter while continuing to fight against the COVID-19 pandemic, we have seen a continued urgency from public health and government officials alike, to encourage New Yorkers to get vaccinated for both influenza and COVID-19. This year in particular, experts are concerned that this year's flu season may be even more severe, due to an unusually mild season last year (Spantideas et al, 2021). Now, with the rise of a new COVID variant, city and public health leaders are pushing for mandatory vaccination requirements and continued COVID-19 precautions to prepare for a potential “Twindemic,” or the simultaneous outbreak of influenza and COVID-19. A Twindemic has the potential to crowd emergency rooms, threaten the public health of our communities, and burden our healthcare system. Therefore, for this project, we seek to conduct an exploratory analysis between COVID-19 and influenza in New York City.  Specifically, we will examine the relationship between COVID-19 and influenza uptake by zip code and sociodemographic factors in New York City through data visualizations and clustering analyses. 
- 
-### Related work: 
-
-New York City was the epicenter of  COVID-19 during the early stages of the COVID-19 pandemic, with 12,589.2 cases and 404.5 deaths per 100,000 residents recorded in September of 2021 (Moreland et al., 2021). Recently, alongside entering the winter season and the emergence of yet another COVID-19 variant, news outlets and academic sources alike have warned of a threat of a Twindemic. The urgency to get vaccinated for not only COVID-19, but also influenza, is prevalent now more than ever among city officials and public health professionals to curb the spread of two infectious diseases. The COVID-19 pandemic shed light on stark racial/ethnic health disparities related to COVID-19 illness and mortality. Furthermore, vaccine hesitancy has exacerbated these disparities, with more people of color disproportionately affected. We aim for the results of our analyses of the COVID-19 and influenza trends in New York City to inform public health programs and policies to improve vaccination efforts to vulnerable communities. 
- 
-### Initial questions
-A few main questions we had for our exploratory analysis on COVID-19 and influenza in New York City included: 
-<li>What is the relationship between COVID and Flu Vaccination Uptake by Zipcode and Sociodemographic Factors in NYC?
-<li>What is the difference in COVID and Flu vaccine uptake in NYC, according to  associated sociodemographic factors?
-<li>What are the patterns observed for COVID and Flu vaccine uptake in New York by zip code?
-<li>Difference in COVID and Flu vaccine uptake in NYC and associated sociodemographic factors.
- 
- 
-# Data
-<br></br>
-
-### NYC Health COVID-19 
-
-The NYC Department of Health and Mental Hygiene (NYC DOH) classifies the start of the COVID-19 outbreak in NYC by its first lab-confirmed case on February 29, 2020. Cases of COVID-19 included in their datasets are considered “confirmed” cases, or cases with a positive result from a molecular test. NYC DOH data on COVID-19 vaccines come from the Citywide Immunization Registry (CIR), which tracks immunizations for all NYC residents. A person is considered fully vaccinated if they have received both doses of the Moderna or Pfizer vaccine series, or received one dose of the Johnson & Johnson/Janssen vaccine series. There is currently no data on COVID-19 boosters. The NYC DOH COVID-19 data can be found here, and the COVID-19 vaccination data can be found here. 
-
-### New York City Locations Providing Seasonal Flu Vaccine
-<br></br>
-https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz
-
-### Census Data
-
-ZIP Code Data
-We also identified a datase that provided the corresponding latitude and longitude for each ZIP code, which we filtered to only include the ZIP codes relevant to our analyses of NYC.
-
-https://gist.github.com/erichurst/7882666
-
- 
-Restricting on adults since vaccines weren’t available to children until recently. Therefore, we want to examine the COVID-19 outcomes among adults in this analysis. 
-Exploratory analysis: Visualizations, summaries, and exploratory statistical analyses. Justify the steps you took, and show any major changes to your ideas.
- 
-# Exploratory Analysis 
 During our exploratory analysis, we first examined COVID-19 and influenza case and vaccine trends separately to better understand the data we were working with. 
-COVID-19 
 
 ```{r setup, include = FALSE}
 library(tidyverse)
@@ -355,7 +312,7 @@ The chart in Plot A shows aggregate counts for case, hospitalization and death c
 
 <br> 
 
-The chart in Plot B shows aggregate counts for case, hospitalization and death counts for Covid 19 delineated by arbitrarily defined age brackets for all boroughs. The greatest concentration of aggregate counts is consistently in the 18-44 and 45-64 year old age bracket which together constitute early and mid adulthood. This is against the general perception that Covid-19 predominantly affects the elderly. This bears significance in public health communication to the public with regards to risk perception.
+The chart in Plot B shows aggregate counts for case, hospitalization and death counts for Covid 19 delineated by arbitrarily defined age brackets for all boroughs.The greatest concentration of aggregate counts is consistently in the 18-44 and 45-64 year old age bracket which together constitute early and mid adulthood. This is against the general perception that Covid-19 predominantly affects the elderly. This bears significance in public health communication to the public with regards to risk perception.
 
 <br> 
 
@@ -423,7 +380,14 @@ These plots show the percent of adults partially and fully vaccinated by borough
 
 <br> 
 
+<<<<<<< HEAD
 ### We then took a look at our flu data:
+=======
+On completing exploratory analyses of Covid related data, we then took a look at our flu data:
+
+<br> 
+
+>>>>>>> 3c4bf33e3418beb38495fc47dfe5785c95b1a51d
 Loading NYC Locations Providing Seasonal Flu Vaccinations/ Emergency Department Visits and Admissions for Influenza-like Illness/ Census Selected Social Characteristics
 
 ```{r, message = FALSE, warning = FALSE}
@@ -472,10 +436,14 @@ ggplot(flu_vaxx_byboro, aes(x = borough, y = n_loc_boro, fill = borough)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-
+The above bar graph shows the number of locations providing the seasonal flu vaccine across all five boroughs of NYC. Based on the graph, we can see that Manhattan has by far the largest number of locations providing the flu vaccine, followed by Brooklyn, Queens, the Bronx, and Staten Island, respectively. 
 
 ## Interactive Map of Flu Vaccine Locations Across Five Boroughs in NYC
 
+<<<<<<< Updated upstream
+=======
+## Merge data and try to make a leaflet
+>>>>>>> Stashed changes
 ```{r}
 merged_vax = left_join(vax_by_zip_adults_df, zip_lat_lon, by = "zipcode")
 ```
@@ -502,18 +470,4 @@ merged_vax %>%
     opacity = 1)
 ```
 
-The above bar graph shows the number of locations providing the seasonal flu vaccine across all five boroughs of NYC. Based on the graph, we can see that Manhattan has by far the largest number of locations providing the flu vaccine, followed by Brooklyn, Queens, the Bronx, and Staten Island, respectively. 
-
-
-# Additional analysis
-
-The number of locations for Flu vaccinations is a bit more densely populated in lower and mid Manhattan compared to the same area in the number of locations for COVID vaccinations. Comparatively, we see that there are generally more locations for COVID vaccinations in Queens, especially in Far Rockaway, and in Brooklyn. This could be due to the demographic of the population living in these areas, as COVID-19 has disproportionately affected Black communities. 
-
-The K function is used to identify clustering, randomness, or regularity among events in a spatial point pattern. Based on both Ripley K graphs, we see that at all distances, the Lobs(r), which is the observed spatial pattern, is higher than Ltheo(r) , which is the expected random spatial pattern. The Lobs(r) also does not intersect at any point with the expected line. This shows there is statistically significant clustering at smaller distances, displaying a clustering pattern. Due to this clustering pattern, there is not a uniform distribution and we see that there are groups of more COVID and Flu vaccination locations in specific areas while other areas like Staten Island and the parts of Queens are lacking. However, NYCHOH has done a good job on utilizing neighborhood and family owned pharmacies, corporation pharmacies such as Walgreens, as well as  mobile vans (for COVID vaccines), to provide access to the vaccines across NYC. 
- 
-# Discussion
-What were your findings? Are they what you expect? What insights into the data can you make?
-
-
-# Limitation
-Flu and covid vaccine data did not overlap, explain
+The above maps show the percentages of fully and partially vaccinated populations by zip code - the maps provide a more granular assessment of the distribution of vaccinated populations by how many doses of respective vaccination types they have received. 
