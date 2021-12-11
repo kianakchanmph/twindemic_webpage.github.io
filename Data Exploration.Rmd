@@ -209,7 +209,12 @@ caserate_by_boro_plot
 ```
 
 COVID-19 
+<<<<<<< HEAD
+
+<br> 
+=======
 <br></br>
+>>>>>>> cb00da2d3f6599185c9ab6c712c55fe64863bef8
 
 This plot shows the weekly case rate by NYC borough, beginning the week starting on August 9, 2020. The plot shows a similar trend in weekly rates across all 5 boroughs. Cases peaked for all boroughs from January through February of 2021. Boroughs experienced a smaller peak in cases in April 2021. Thereafter, case rates were significantly lower from April 2021 onwards, coinciding with the period of eligibility for NYC adults to be vaccinated against Covid-19. 
 
