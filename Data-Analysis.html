@@ -367,6 +367,76 @@ div.tocify {
 
 
 <p>If we decide to show some relationship or do a statistical test, this may be a good place to show that.</p>
+<p>#Clustering analysis</p>
+<pre class="r"><code>library(maptools)</code></pre>
+<pre><code>## Loading required package: sp</code></pre>
+<pre><code>## Checking rgeos availability: FALSE
+## Please note that &#39;maptools&#39; will be retired by the end of 2023,
+## plan transition at your earliest convenience;
+## some functionality will be moved to &#39;sp&#39;.
+##      Note: when rgeos is not available, polygon geometry     computations in maptools depend on gpclib,
+##      which has a restricted licence. It is disabled by default;
+##      to enable gpclib, type gpclibPermit()</code></pre>
+<pre class="r"><code>library(spatstat)</code></pre>
+<pre><code>## Loading required package: spatstat.data</code></pre>
+<pre><code>## Loading required package: spatstat.geom</code></pre>
+<pre><code>## spatstat.geom 2.3-1</code></pre>
+<pre><code>## Loading required package: spatstat.core</code></pre>
+<pre><code>## Loading required package: nlme</code></pre>
+<pre><code>## Loading required package: rpart</code></pre>
+<pre><code>## spatstat.core 2.3-2</code></pre>
+<pre><code>## Loading required package: spatstat.linnet</code></pre>
+<pre><code>## spatstat.linnet 2.3-0</code></pre>
+<pre><code>## 
+## spatstat 2.2-0       (nickname: &#39;That&#39;s not important right now&#39;) 
+## For an introduction to spatstat, type &#39;beginner&#39;</code></pre>
+<pre class="r"><code>library(sf)</code></pre>
+<pre><code>## Linking to GEOS 3.8.1, GDAL 3.2.1, PROJ 7.2.1</code></pre>
+<pre class="r"><code>knitr::opts_chunk$set(
+  fig.width = 6,
+  fig.asp = .9,
+  out.width = &quot;90%&quot;
+)</code></pre>
+<div id="flu-clustering" class="section level2">
+<h2>FLU CLUSTERING</h2>
+<pre class="r"><code>mydata &lt;- read.csv(&quot;./data/NYC_Flu_locations.csv&quot;)
+NYC_Flu_Locations &lt;- ppp(mydata[,13], mydata[,12], c(-74.23442287,-73.68843386), c(40.51789347,40.90856191))</code></pre>
+<pre><code>## Warning: data contain duplicated points</code></pre>
+<pre class="r"><code>plot(NYC_Flu_Locations)</code></pre>
+<p><img src="Data-Analysis_files/figure-html/unnamed-chunk-2-1.png" width="90%" /></p>
+<p>#This is running the K function test</p>
+<pre class="r"><code>L &lt;- envelope(NYC_Flu_Locations, Lest, nsim = 10, rank = 2, global = T)</code></pre>
+<pre><code>## Generating 10 simulations of CSR  ...
+## 1, 2, 3, 4, 5, 6, 7, 8, 9,  10.
+## 
+## Done.</code></pre>
+<p>#Plot L function with Main Title and x-/y-axis labels</p>
+<pre class="r"><code>plot(L, 
+     main = &quot;NYC Flu Locations Clustering Results&quot;, 
+     ylab = &quot;Density Function&quot;,
+     xlab = &quot;Distance&quot;)</code></pre>
+<p><img src="Data-Analysis_files/figure-html/unnamed-chunk-4-1.png" width="90%" /></p>
+</div>
+<div id="covid-clustering" class="section level2">
+<h2>COVID CLUSTERING</h2>
+<pre class="r"><code>mydata2 &lt;- read.csv(&quot;./data/COVID_NYC_locations_1.csv&quot;) 
+NYC_COVID_Locations &lt;- ppp(mydata2[,6], mydata2[,5], c(-74.23538,-73.71330), c(40.51695749,40.90388332))</code></pre>
+<pre><code>## Warning in ppp(mydata2[, 6], mydata2[, 5], c(-74.23538, -73.7133),
+## c(40.51695749, : 978 out of 1992 points had NA or NaN coordinate values, and
+## were discarded</code></pre>
+<pre class="r"><code>plot(NYC_COVID_Locations)</code></pre>
+<p><img src="Data-Analysis_files/figure-html/unnamed-chunk-5-1.png" width="90%" /></p>
+<pre class="r"><code>L &lt;- envelope(NYC_COVID_Locations, Lest, nsim = 10, rank = 2, global = T)</code></pre>
+<pre><code>## Generating 10 simulations of CSR  ...
+## 1, 2, 3, 4, 5, 6, 7, 8, 9,  10.
+## 
+## Done.</code></pre>
+<pre class="r"><code>plot(L, 
+     main = &quot;NYC COVID Vaccine Locations Clustering Results&quot;, 
+     ylab = &quot;Density Function&quot;,
+     xlab = &quot;Distance&quot;)</code></pre>
+<p><img src="Data-Analysis_files/figure-html/unnamed-chunk-7-1.png" width="90%" /></p>
+</div>
 
 
 
