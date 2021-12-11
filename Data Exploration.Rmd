@@ -271,7 +271,7 @@ boroughs_by_sex_plot =
     geom_bar(stat = "identity") +
     facet_grid(. ~ borough) +
   labs(
-    title = "Case, death, hospitalization counts by sex and borough",
+    title = "Plot A: Case, death, hospitalization counts by sex and borough",
     x = "",
     y = "Count"
   )
@@ -282,7 +282,7 @@ boroughs_by_age_plot =
     geom_bar(stat = "identity")  +
     facet_grid(. ~ borough) +
   labs(
-    title = "Case, death, hospitalization counts by age and borough",
+    title = "Plot B: Case, death, hospitalization counts by age and borough",
     x = "",
     y = "Count"
   ) +
@@ -294,7 +294,7 @@ boroughs_by_race_df %>%
     geom_bar(stat = "identity") +
     facet_grid(. ~ borough) +
   labs(
-    title = "Case, death, hospitalization counts by race and borough",
+    title = "Plot C: Case, death, hospitalization counts by race and borough",
     x = "",
     y = "Count"
   ) +
@@ -305,7 +305,17 @@ boroughs_by_age_plot
 boroughs_by_race_plot
 ```
 
+The chart in Plot A shows aggregate counts for case, hospitalization and death counts for Covid 19 delineated by sex for all boroughs. It is clear that Queens, Brooklyn and Bronx have the highest aggregate counts in that order of decreasing magnitude. This pattern may explain the clustering of vaccination locations in these boroughs that we explore in subsequent paragraphs. It also noted that the counts for males are consistently higher than for females among all boroughs. 
 
+<br> 
+
+The chart in Plot B shows aggregate counts for case, hospitalization and death counts for Covid 19 delineated by arbitrarily defined age brackets for all boroughs.The greatest concentration of aggregate counts is consistently in the 18-44 and 45-64 year old age bracket which together constitute early and mid adulthood. This is against the general perception that Covid-19 predominantly affects the elderly. This bears significance in public health communication to the public with regards to risk perception.
+
+<br> 
+
+The chart in Plot C shows aggregate counts for case, hospitalization and death counts for Covid 19 delineated by arbitrarily defined race. The chart shows that the greatest burden of the aggregate measures is in the non-white population,  lending further credence to the underlying racial disparities in Covid-19 outcomes and the disproportionate burden of the disease. 
+
+<br> 
     
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 partial_vax_plot =
