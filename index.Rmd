@@ -3,7 +3,7 @@ title: "Examining the Threat of a 'Twindemic' in New York City"
 subtitle: "An Exploratory Analysis of COVID-19 and Influenza vaccination and prevalence patterns in NYC in 2020 and 2021"
 output: 
   html_document:
-    cold_folding: hide
+    code_folding: hide
     toc: true
     toc_float: true
 ---

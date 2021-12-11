@@ -2,7 +2,7 @@
 title: "Data Exploration"
 output: 
   html_document:
-    cold_folding: hide
+    code_folding: hide
     toc: true
     toc_float: true
 ---

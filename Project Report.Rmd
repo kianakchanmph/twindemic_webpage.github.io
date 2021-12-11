@@ -2,7 +2,7 @@
 title: "Project Report"
 output: 
   html_document:
-    cold_folding: hide
+    code_folding: hide
     toc: true
     toc_float: true
 ---
@@ -66,6 +66,7 @@ The above bar graph examines the relationship between locations providing the se
 # Additional analysis
 If you undertake formal statistical analyses, describe these in detail
  
+ Add Graph (NYC COVID Vaccine Locations Clustering Results)
  
 # Discussion
 What were your findings? Are they what you expect? What insights into the data can you make?
