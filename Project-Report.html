@@ -335,7 +335,7 @@ div.tocify {
   <a href="Project-Report.html">Project Report</a>
 </li>
 <li>
-  <a href="https://github.com/kianakchanmph/twindemic_analysis">
+  <a href="https://github.com/kianakchanmph/twindemic_webpage.github.io.git">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -368,19 +368,22 @@ div.tocify {
 </div>
 <div id="initial-questions" class="section level1">
 <h1>Initial questions</h1>
-<p>What questions are you trying to answer? How did these questions evolve over the course of the project? What new questions did you consider in the course of your analysis? A few main questions we had for our exploratory analysis on COVID-19 and influenza in New York City included: Option: What is the relationship between COVID and Flu Vaccination Uptake by Zipcode and Sociodemographic Factors in NYC? Option: What is the difference in COVID and Flu vaccine uptake in NYC, according to associated sociodemographic factors? Option: What are the patterns observed for COVID and Flu vaccine uptake in New York by zip code? Option: Difference in COVID and Flu vaccine uptake in NYC and associated sociodemographic factors.</p>
+<p>A few main questions we had for our exploratory analysis on COVID-19 and influenza in New York City included: * What is the relationship between COVID and Flu Vaccination Uptake by Zipcode and Sociodemographic Factors in NYC? * Option: What is the difference in COVID and Flu vaccine uptake in NYC, according to associated sociodemographic factors? * Option: What are the patterns observed for COVID and Flu vaccine uptake in New York by zip code? * Option: Difference in COVID and Flu vaccine uptake in NYC and associated sociodemographic factors.</p>
 </div>
 <div id="data-source-scraping-method-cleaning-etc." class="section level1">
 <h1>Data: Source, scraping method, cleaning, etc.</h1>
+<div id="nyc-health-covid-19" class="section level2">
+<h2>NYC Health COVID-19</h2>
+<p>The NYC Department of Health and Mental Hygiene (NYC DOH) classifies the start of the COVID-19 outbreak in NYC by its first lab-confirmed case on February 29, 2020. Cases of COVID-19 included in their datasets are considered “confirmed” cases, or cases with a positive result from a molecular test. NYC DOH data on COVID-19 vaccines come from the Citywide Immunization Registry (CIR), which tracks immunizations for all NYC residents. A person is considered fully vaccinated if they have received both doses of the Moderna or Pfizer vaccine series, or received one dose of the Johnson &amp; Johnson/Janssen vaccine series. There is currently no data on COVID-19 boosters. The NYC DOH COVID-19 data can be found here, and the COVID-19 vaccination data can be found here.</p>
+New York City Locations Providing Seasonal Flu Vaccine
 <li>
-New York City Locations Providing Seasonal Flu Vaccine <a href="https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz" class="uri">https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz</a>
+<p><a href="https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz" class="uri">https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz</a></p>
+<p>Census Data</p>
+<p>ZIP Code Data We also identified a datase that provided the corresponding latitude and longitude for each ZIP code, which we filtered to only include the ZIP codes relevant to our analyses of NYC.</p>
 <li>
-DOHMH COVID Antibody by Borough <a href="https://data.cityofnewyork.us/Health/DOHMH-COVID-19-Antibody-by-Borough/x98t-3bbk" class="uri">https://data.cityofnewyork.us/Health/DOHMH-COVID-19-Antibody-by-Borough/x98t-3bbk</a>
-<li>
-DOHMH COVID Antibody by Age <a href="https://data.cityofnewyork.us/Health/DOHMH-COVID-Antibody-by-Age/7umd-hdjb" class="uri">https://data.cityofnewyork.us/Health/DOHMH-COVID-Antibody-by-Age/7umd-hdjb</a>
-<li>
-<p>DOHMH COVID Antibody by Neighbourhood Poverty <a href="https://data.cityofnewyork.us/Health/DOHMH-COVID-19-Antibody-by-Neighborhood-Poverty/vajk-p37e" class="uri">https://data.cityofnewyork.us/Health/DOHMH-COVID-19-Antibody-by-Neighborhood-Poverty/vajk-p37e</a></p>
+<p><a href="https://gist.github.com/erichurst/7882666" class="uri">https://gist.github.com/erichurst/7882666</a></p>
 <p>Restricting on adults since vaccines weren’t available to children until recently. Therefore, we want to examine the COVID-19 outcomes among adults in this analysis. Exploratory analysis: Visualizations, summaries, and exploratory statistical analyses. Justify the steps you took, and show any major changes to your ideas.</p>
+</div>
 </div>
 <div id="additional-analysis" class="section level1">
 <h1>Additional analysis</h1>

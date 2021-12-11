@@ -19,22 +19,27 @@ Anything that inspired you, such as a paper, a website, or something we discusse
 New York City was the epicenter of  COVID-19 during the early stages of the COVID-19 pandemic, with 12,589.2 cases and 404.5 deaths per 100,000 residents recorded in September of 2021 (Moreland et al., 2021). Recently, alongside entering the winter season and the emergence of yet another COVID-19 variant, news outlets and academic sources alike have warned of a threat of a Twindemic. The urgency to get vaccinated for not only COVID-19, but also influenza, is prevalent now more than ever among city officials and public health professionals to curb the spread of two infectious diseases. The COVID-19 pandemic shed light on stark racial/ethnic health disparities related to COVID-19 illness and mortality. Furthermore, vaccine hesitancy has exacerbated these disparities, with more people of color disproportionately affected. We aim for the results of our analyses of the COVID-19 and influenza trends in New York City to inform public health programs and policies to improve vaccination efforts to vulnerable communities. 
  
 # Initial questions
-What questions are you trying to answer? How did these questions evolve over the course of the project? What new questions did you consider in the course of your analysis?
 A few main questions we had for our exploratory analysis on COVID-19 and influenza in New York City included: 
-Option: What is the relationship between COVID and Flu Vaccination Uptake by Zipcode and Sociodemographic Factors in NYC?
-Option:  What is the difference in COVID and Flu vaccine uptake in NYC, according to  associated sociodemographic factors?
-Option: What are the patterns observed for COVID and Flu vaccine uptake in New York by zip code?
-Option: Difference in COVID and Flu vaccine uptake in NYC and associated sociodemographic factors.
+* What is the relationship between COVID and Flu Vaccination Uptake by Zipcode and Sociodemographic Factors in NYC?
+* Option:  What is the difference in COVID and Flu vaccine uptake in NYC, according to  associated sociodemographic factors?
+* Option: What are the patterns observed for COVID and Flu vaccine uptake in New York by zip code?
+* Option: Difference in COVID and Flu vaccine uptake in NYC and associated sociodemographic factors.
  
  
 # Data: Source, scraping method, cleaning, etc.
-<li>New York City Locations Providing Seasonal Flu Vaccine https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz
-<li>DOHMH COVID Antibody by Borough
-https://data.cityofnewyork.us/Health/DOHMH-COVID-19-Antibody-by-Borough/x98t-3bbk 
-<li>DOHMH COVID Antibody by Age
-https://data.cityofnewyork.us/Health/DOHMH-COVID-Antibody-by-Age/7umd-hdjb 
-<li>DOHMH COVID Antibody by Neighbourhood Poverty
-https://data.cityofnewyork.us/Health/DOHMH-COVID-19-Antibody-by-Neighborhood-Poverty/vajk-p37e 
+
+## NYC Health COVID-19 
+The NYC Department of Health and Mental Hygiene (NYC DOH) classifies the start of the COVID-19 outbreak in NYC by its first lab-confirmed case on February 29, 2020. Cases of COVID-19 included in their datasets are considered “confirmed” cases, or cases with a positive result from a molecular test. NYC DOH data on COVID-19 vaccines come from the Citywide Immunization Registry (CIR), which tracks immunizations for all NYC residents. A person is considered fully vaccinated if they have received both doses of the Moderna or Pfizer vaccine series, or received one dose of the Johnson & Johnson/Janssen vaccine series. There is currently no data on COVID-19 boosters. The NYC DOH COVID-19 data can be found here, and the COVID-19 vaccination data can be found here. 
+
+New York City Locations Providing Seasonal Flu Vaccine <li>https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz
+
+Census Data
+
+ZIP Code Data
+We also identified a datase that provided the corresponding latitude and longitude for each ZIP code, which we filtered to only include the ZIP codes relevant to our analyses of NYC.
+
+<li>https://gist.github.com/erichurst/7882666
+
  
 Restricting on adults since vaccines weren’t available to children until recently. Therefore, we want to examine the COVID-19 outcomes among adults in this analysis. 
 Exploratory analysis: Visualizations, summaries, and exploratory statistical analyses. Justify the steps you took, and show any major changes to your ideas.
