@@ -46,7 +46,23 @@ https://gist.github.com/erichurst/7882666
 Restricting on adults since vaccines weren’t available to children until recently. Therefore, we want to examine the COVID-19 outcomes among adults in this analysis. 
 Exploratory analysis: Visualizations, summaries, and exploratory statistical analyses. Justify the steps you took, and show any major changes to your ideas.
  
- 
+### Exploratory Analysis 
+During our exploratory analysis, we first examined COVID-19 and influenza case and vaccine trends separately to better understand the data we were working with. 
+COVID-19 
+
+Add plot image (Weekly Case Rate by Borough)
+
+
+This plot shows the weekly case rate by NYC borough, beginning the week ending on August 8, 2020. From the plot, we can see that each borough followed a similar trend in cases over time. Cases peaked for all boroughs around January through February of 2021, and then another smaller peak in cases at April 2021. Cases were significantly lower after April 2021, around the time when most NYC adults were eligible to get vaccinated. 
+
+Add plot (Percent adults partially vaccinated by borough)
+
+These plots show the percent of adults partially and fully vaccinated by borough, as of December 2021. The partially vaccinated plot excluded outliers greater than 30% and the fully vaccinated plot excluded outliers greater than 100%, as they were not representative of the dataset and may have been included erroneously. The median full-vaccination rate is greater than 75% for each borough, with Queens, Manhattan, and Staten Island having the highest full-vaccination rates, respectively. Interestingly, while Staten Island has one of the higher vaccination rates, it is consistently the borough with the highest case rate out of all the boroughs. When we examine the partially and fully vaccinated rates cumulatively, each borough is at least 80% vaccinated. 
+
+Add Plot (Distribution of Locations Providing Seasonal Flu Vaccinations)
+
+The above bar graph examines the relationship between locations providing the seasonal flu vaccine and boroughs of NYC. Based on the graph, we can see that Manhattan has by far the largest number of locations providing the flu vaccine, followed by Brooklyn, Queens, the Bronx, and Staten Island, respectively. 
+
 # Additional analysis
 If you undertake formal statistical analyses, describe these in detail
  
