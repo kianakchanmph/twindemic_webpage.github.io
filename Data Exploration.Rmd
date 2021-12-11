@@ -440,6 +440,10 @@ The above bar graph shows the number of locations providing the seasonal flu vac
 
 ## Interactive Map of Flu Vaccine Locations Across Five Boroughs in NYC
 
+<<<<<<< Updated upstream
+=======
+## Merge data and try to make a leaflet
+>>>>>>> Stashed changes
 ```{r}
 merged_vax = left_join(vax_by_zip_adults_df, zip_lat_lon, by = "zipcode")
 ```
