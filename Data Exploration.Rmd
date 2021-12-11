@@ -377,7 +377,10 @@ These plots show the percent of adults partially and fully vaccinated by borough
 
 <br> 
 
-We then took a look at our flu data:
+On completing exploratory analyses of Covid related data, we then took a look at our flu data:
+
+<br> 
+
 Loading NYC Locations Providing Seasonal Flu Vaccinations/ Emergency Department Visits and Admissions for Influenza-like Illness/ Census Selected Social Characteristics
 
 ```{r, message = FALSE, warning = FALSE}
@@ -426,7 +429,7 @@ ggplot(flu_vaxx_byboro, aes(x = borough, y = n_loc_boro, fill = borough)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-
+The above bar graph shows the number of locations providing the seasonal flu vaccine across all five boroughs of NYC. Based on the graph, we can see that Manhattan has by far the largest number of locations providing the flu vaccine, followed by Brooklyn, Queens, the Bronx, and Staten Island, respectively. 
 
 #Merge data and try to make a leaflet
 ```{r}
@@ -455,3 +458,4 @@ merged_vax %>%
     opacity = 1)
 ```
 
+The above maps show the percentages of fully and partially vaccinated populations by zip code - the maps provide a more granular assessment of the distribution of vaccinated populations by how many doses of respective vaccination types they have received. 
