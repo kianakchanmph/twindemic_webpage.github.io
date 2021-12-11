@@ -207,7 +207,10 @@ caserate_by_boro_plot =
 
 caserate_by_boro_plot
 ```
+
 COVID-19 
+<br></br>
+
 This plot shows the weekly case rate by NYC borough, beginning the week starting on August 9, 2020. The plot shows a similar trend in weekly rates across all 5 boroughs. Cases peaked for all boroughs from January through February of 2021. Boroughs experienced a smaller peak in cases in April 2021. Thereafter, case rates were significantly lower from April 2021 onwards, coinciding with the period of eligibility for NYC adults to be vaccinated against Covid-19. 
 
 <br>  
@@ -377,7 +380,7 @@ These plots show the percent of adults partially and fully vaccinated by borough
 
 <br> 
 
-We then took a look at our flu data:
+### We then took a look at our flu data:
 Loading NYC Locations Providing Seasonal Flu Vaccinations/ Emergency Department Visits and Admissions for Influenza-like Illness/ Census Selected Social Characteristics
 
 ```{r, message = FALSE, warning = FALSE}
@@ -428,7 +431,8 @@ ggplot(flu_vaxx_byboro, aes(x = borough, y = n_loc_boro, fill = borough)) +
 
 
 
-#Merge data and try to make a leaflet
+## Interactive Map of Flu Vaccine Locations Across Five Boroughs in NYC
+
 ```{r}
 merged_vax = left_join(vax_by_zip_adults_df, zip_lat_lon, by = "zipcode")
 ```
