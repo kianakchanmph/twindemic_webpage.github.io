@@ -35,8 +35,7 @@ New York City was the epicenter of  COVID-19 during the early stages of the COVI
 ### Outline of the Website 
 <ul>
 <li>[Data Exploration](Data-Exploration.html) : Provides an overview and distribution of the variables in our dataset.<li>
-[Data Analysis](Data-Analysis.html) : The analysis provides an in-depth explanation of data cleaning, wrangling, and analysis of the data sets we used. <li>
-[Interactive Maps](Interactive-Maps.html) : This provides a side-by-side comparison of flu and Covid-19.
+[Data Analysis](Data-Analysis.html) : This provides an analysis of flu and covid clustering.
 <li>[Project Report](Project_Report.html) : This is an in-depth write up of our project.
 
 <br></br>
