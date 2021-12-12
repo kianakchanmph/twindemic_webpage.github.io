@@ -506,6 +506,58 @@ The above bar graph shows the number of locations providing the seasonal flu vac
 
 
 # Additional analysis
+## Clustering analysis
+
+```{r}
+library(maptools)
+library(spatstat)
+library(sf)
+
+knitr::opts_chunk$set(
+  fig.width = 6,
+  fig.asp = .9,
+  out.width = "90%"
+)
+```
+
+## FLU CLUSTERING
+```{r}
+mydata <- read.csv("./data/NYC_Flu_locations.csv")
+NYC_Flu_Locations <- ppp(mydata[,13], mydata[,12], c(-74.23442287,-73.68843386), c(40.51789347,40.90856191))
+plot(NYC_Flu_Locations)
+```
+
+## K function test
+```{r}
+L <- envelope(NYC_Flu_Locations, Lest, nsim = 10, rank = 2, global = T)
+```
+
+## Plot L function with Main Title and x-/y-axis labels
+```{r}
+plot(L, 
+     main = "NYC Flu Locations Clustering Results", 
+     ylab = "Density Function",
+     xlab = "Distance")
+```
+
+
+## COVID CLUSTERING
+```{r}
+mydata2 <- read.csv("./data/COVID_NYC_locations_1.csv") 
+NYC_COVID_Locations <- ppp(mydata2[,6], mydata2[,5], c(-74.23538,-73.71330), c(40.51695749,40.90388332))
+plot(NYC_COVID_Locations)
+```
+
+```{r}
+L <- envelope(NYC_COVID_Locations, Lest, nsim = 10, rank = 2, global = T)
+```
+
+```{r}
+plot(L, 
+     main = "NYC COVID Vaccine Locations Clustering Results", 
+     ylab = "Density Function",
+     xlab = "Distance")
+```
 
 The number of locations for Flu vaccinations is a bit more densely populated in lower and mid Manhattan compared to the same area in the number of locations for COVID vaccinations. Comparatively, we see that there are generally more locations for COVID vaccinations in Queens, especially in Far Rockaway, and in Brooklyn. This could be due to the demographic of the population living in these areas, as COVID-19 has disproportionately affected Black communities. 
 
