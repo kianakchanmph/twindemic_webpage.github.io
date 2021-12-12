@@ -10,6 +10,12 @@ output:
 
 # Introduction: 
 <br></br>
+<center>
+<img src="./image/vaccine.jpg" style="width:75%" class="center">
+<br>Image source: [The New York Times](https://www.nytimes.com/2020/08/16/health/coronavirus-flu-vaccine-twindemic.html)
+</center>
+&nbsp;
+
 
 ### Motivation
 

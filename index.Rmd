@@ -11,11 +11,8 @@ output:
 <h5 style="text-align: left;" markdown="1">Group members: Teshawna Badu |  Kiana Chan |  Judy Fordjuoh | Rachelle Juan |  Kelvin Tamakloe </h6>
 <br></br>
 
-<center>
-<img src="./image/vaccine.jpg" style="width:75%" class="center">
-<br>Image source: [The New York Times](https://www.nytimes.com/2020/08/16/health/coronavirus-flu-vaccine-twindemic.html)
-</center>
-&nbsp;
+# Screencast Introduction
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gd0XgdkEaVo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ### Learn about our Project
