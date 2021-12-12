@@ -8,7 +8,7 @@ output:
 ---
 
 
-# Clustering analysis
+## Clustering analysis
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 library(maptools)
 library(spatstat)
@@ -21,7 +21,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-## FLU CLUSTERING
+<br>
+
+### FLU CLUSTERING
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 mydata <- read.csv("./data/NYC_Flu_locations.csv")
 NYC_Flu_Locations <- ppp(mydata[,13], mydata[,12], c(-74.23442287,-73.68843386), c(40.51789347,40.90856191))
