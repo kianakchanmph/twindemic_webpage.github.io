@@ -393,9 +393,9 @@ full_vax_plot
 
 These plots show the percent of adults partially and fully vaccinated by borough, as of December 2021. The partially vaccinated plot excluded outliers greater than 30% and the fully vaccinated plot excluded outliers greater than 100%, as they were not representative of the dataset and may have been included erroneously. The median full-vaccination rate is greater than 75% for each borough, with Queens, Manhattan, and Staten Island having the highest full-vaccination rates, respectively. Interestingly, while Staten Island has one of the higher vaccination rates, it is consistently the borough with the highest case rate out of all the boroughs. When we examine the partially and fully vaccinated rates cumulatively, each borough is at least 80% vaccinated. 
 
+<br>
 
 ## Interactive Map of Full Vaccination by Zipcode in NYC 
-
 
 ```{r}
 merged_vax = left_join(vax_by_zip_adults_df, zip_lat_lon, by = "zipcode")
@@ -413,6 +413,7 @@ merged_vax %>%
 ```
 The interactive map depicts the count of individuals who are fully vaccinated in New York City, categorized by zipcode. Based on the map, we can see that Manhattan and Queens seem to be the areas that have a higher count of individuals who are fully vaccinated. It appears that the Bronx and Brooklyn have a much lower count of individuals who are fully vaccinated. 
 
+<br>
 
 ## Interactive Map of Partial Vaccination by Zipcode in NYC
 
@@ -427,6 +428,7 @@ merged_vax %>%
     opacity = 1)
 ```
 The interactive map depicts the count of individuals who are partially vaccinated in New York City, categorized by zipcode. It appears that Queens and Brooklyn (and some parts of the Bronx) have a higher count of individuals who are only partially vaccinated, compared to Manhattan. 
+
 <br> 
 
 # We then took a look at our flu data:
@@ -480,7 +482,7 @@ ggplot(flu_vaxx_byboro, aes(x = borough, y = n_loc_boro, fill = borough)) +
 ```
 The above bar graph shows the number of locations providing the seasonal flu vaccine across all five boroughs of NYC. Based on the graph, we can see that Manhattan has by far the largest number of locations providing the flu vaccine, followed by Brooklyn, Queens, the Bronx, and Staten Island, respectively. 
 
-
+<br>
 
 # Additional analysis
 ## Clustering analysis
