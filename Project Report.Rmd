@@ -361,34 +361,6 @@ The chart in Plot B shows aggregate counts for case, hospitalization and death c
 
 The chart in Plot C shows aggregate counts for case, hospitalization and death counts for Covid 19 delineated by arbitrarily defined race. The chart shows that the greatest burden of the aggregate measures is in the non-white population,  lending further credence to the underlying racial disparities in Covid-19 outcomes and the disproportionate burden of the disease. 
 
-<br> 
-    
-```{r, echo = FALSE, message = FALSE, warning = FALSE}
-partial_vax_plot =
-  vax_by_zip_adults_df %>% 
-  filter(perc_partially < 30) %>% 
-  ggplot(aes(x = boro, y = perc_partially, fill = boro)) +
-  geom_boxplot() +
-  labs(
-    title = "Percent adults partially vaccinated by borough, as of 12/7/2021",
-    x = "",
-    y = "Percent partially vaccinated"
-  )
-
-full_vax_plot =
-  vax_by_zip_adults_df %>% 
-  filter(perc_fully < 100) %>% 
-  ggplot(aes(x = boro, y = perc_fully, fill = boro)) +
-  geom_boxplot() +
-  labs(
-    title = "Percent adults fully vaccinated by borough, as of 12/7/2021",
-    x = "",
-    y = "Percent fully vaccinated"
-  )
-
-partial_vax_plot
-full_vax_plot
-```
 
 <br> 
 
@@ -421,9 +393,41 @@ full_vax_plot
 
 These plots show the percent of adults partially and fully vaccinated by borough, as of December 2021. The partially vaccinated plot excluded outliers greater than 30% and the fully vaccinated plot excluded outliers greater than 100%, as they were not representative of the dataset and may have been included erroneously. The median full-vaccination rate is greater than 75% for each borough, with Queens, Manhattan, and Staten Island having the highest full-vaccination rates, respectively. Interestingly, while Staten Island has one of the higher vaccination rates, it is consistently the borough with the highest case rate out of all the boroughs. When we examine the partially and fully vaccinated rates cumulatively, each borough is at least 80% vaccinated. 
 
+
+## Interactive Map of Full Vaccination by Zipcode in NYC 
+
+
+```{r}
+merged_vax = left_join(vax_by_zip_adults_df, zip_lat_lon, by = "zipcode")
+```
+
+```{r, message=FALSE}
+pal = colorFactor("viridis", NULL)
+merged_vax %>%
+  leaflet() %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  addCircleMarkers(~lng, ~lat, radius = 5, color = ~pal(perc_fully), popup = ~perc_fully) %>%
+    addLegend("bottomright", pal = pal, values = ~perc_fully,
+    title = "Percent fully vaccinated",
+    opacity = 1)
+```
+
+## Interactive Map of Partial Vaccination by Zipcode in NYC
+
+```{r, message=FALSE}
+pal = colorFactor("viridis", NULL)
+merged_vax %>%
+  leaflet() %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  addCircleMarkers(~lng, ~lat, radius = 5, color = ~pal(perc_partially), popup = ~perc_partially) %>%
+    addLegend("bottomright", pal = pal, values = ~perc_partially,
+    title = "Percent partially vaccinated",
+    opacity = 1)
+```
+
 <br> 
 
-### We then took a look at our flu data:
+# We then took a look at our flu data:
 Loading NYC Locations Providing Seasonal Flu Vaccinations/ Emergency Department Visits and Admissions for Influenza-like Illness/ Census Selected Social Characteristics
 
 ```{r, message = FALSE, warning = FALSE}
@@ -435,7 +439,7 @@ census_social = read_csv("./data/censuszip_selected_social_characterisitcs_new.c
 ```
 
  
-# Data Cleaning 2
+## Data Cleaning 2
 Cleaning flu_vaxx_loc:
 ```{r}
 
@@ -471,38 +475,8 @@ ggplot(flu_vaxx_byboro, aes(x = borough, y = n_loc_boro, fill = borough)) +
   ) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
-
-
-
-## Interactive Map of Flu Vaccine Locations Across Five Boroughs in NYC
-
-```{r}
-merged_vax = left_join(vax_by_zip_adults_df, zip_lat_lon, by = "zipcode")
-```
-
-```{r, message=FALSE}
-pal = colorFactor("viridis", NULL)
-merged_vax %>%
-  leaflet() %>%
-  addProviderTiles(providers$CartoDB.Positron) %>%
-  addCircleMarkers(~lng, ~lat, radius = 5, color = ~pal(perc_fully), popup = ~perc_fully) %>%
-    addLegend("bottomright", pal = pal, values = ~perc_fully,
-    title = "Percent fully vaccinated",
-    opacity = 1)
-```
-
-```{r, message=FALSE}
-pal = colorFactor("viridis", NULL)
-merged_vax %>%
-  leaflet() %>%
-  addProviderTiles(providers$CartoDB.Positron) %>%
-  addCircleMarkers(~lng, ~lat, radius = 5, color = ~pal(perc_partially), popup = ~perc_partially) %>%
-    addLegend("bottomright", pal = pal, values = ~perc_partially,
-    title = "Percent partially vaccinated",
-    opacity = 1)
-```
-
 The above bar graph shows the number of locations providing the seasonal flu vaccine across all five boroughs of NYC. Based on the graph, we can see that Manhattan has by far the largest number of locations providing the flu vaccine, followed by Brooklyn, Queens, the Bronx, and Staten Island, respectively. 
+
 
 
 # Additional analysis
