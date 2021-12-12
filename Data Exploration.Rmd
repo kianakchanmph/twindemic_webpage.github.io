@@ -214,6 +214,7 @@ This plot shows the weekly case rate by NYC borough, beginning the week starting
 <br>  
 
 # Borough by sex, age, and race
+# Borough by sex, age, and race
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 boroughs_by_sex_df = 
   boroughs_by_sex %>% 
@@ -231,7 +232,6 @@ boroughs_by_sex_df =
     measure %in% c("case_count", "hospitalized_count", "death_count"),
     group != "Boroughwide"
     ) 
-
 boroughs_by_age_df =  
  boroughs_by_age %>% 
   janitor::clean_names() %>% 
@@ -248,7 +248,6 @@ boroughs_by_age_df =
     measure %in% c("case_count", "hospitalized_count", "death_count"),
     group != "Boroughwide"
     ) 
-
 boroughs_by_race_df = 
   boroughs_by_race %>% 
   janitor::clean_names() %>% 
@@ -265,7 +264,6 @@ boroughs_by_race_df =
     measure %in% c("case_count", "hospitalized_count", "death_count"),
     group != "Boroughwide"
     ) 
-
 boroughs_by_sex_plot =
   boroughs_by_sex_df %>% 
   ggplot(aes(x = group, y = value, fill = measure)) +
@@ -276,7 +274,6 @@ boroughs_by_sex_plot =
     x = "",
     y = "Count"
   )
-
 boroughs_by_age_plot =
   boroughs_by_age_df %>% 
   ggplot(aes(x = group, y = value, fill = measure)) +
@@ -288,7 +285,6 @@ boroughs_by_age_plot =
     y = "Count"
   ) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
-
 boroughs_by_race_plot = 
 boroughs_by_race_df %>% 
   ggplot(aes(x = group, y = value, fill = measure)) +
@@ -300,7 +296,6 @@ boroughs_by_race_df %>%
     y = "Count"
   ) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
-
 boroughs_by_sex_plot
 boroughs_by_age_plot
 boroughs_by_race_plot
@@ -345,10 +340,6 @@ partial_vax_plot
 full_vax_plot
 ```
 
-<br> 
-
-
-
 These plots show the percent of adults partially and fully vaccinated by borough, as of December 2021. The partially vaccinated plot excluded outliers greater than 30% and the fully vaccinated plot excluded outliers greater than 100%, as they were not representative of the dataset and may have been included erroneously. The median full-vaccination rate is greater than 75% for each borough, with Queens, Manhattan, and Staten Island having the highest full-vaccination rates, respectively. Interestingly, while Staten Island has one of the higher vaccination rates, it is consistently the borough with the highest case rate out of all the boroughs. When we examine the partially and fully vaccinated rates cumulatively, each borough is at least 80% vaccinated. 
 
 ## Interactive Map for vaccination 
@@ -368,6 +359,9 @@ merged_vax %>%
     title = "Percent fully vaccinated",
     opacity = 1)
 ```
+The interactive map depicts the count of individuals who are fully vaccinated in New York City, categorized by zipcode. Based on the map, we can see that Manhattan and Queens seem to be the areas that have a higher count of individuals who are fully vaccinated. It appears that the Bronx and Brooklyn have a much lower count of individuals who are fully vaccinated.
+
+<br> 
 
 ```{r, message=FALSE}
 pal = colorFactor("viridis", NULL)
@@ -380,7 +374,7 @@ merged_vax %>%
     opacity = 1)
 ```
 
-The above maps show the percentages of fully and partially vaccinated populations by zip code - the maps provide a more granular assessment of the distribution of vaccinated populations by how many doses of respective vaccination types they have received. 
+The interactive map depicts the count of individuals who are partially vaccinated in New York City, categorized by zipcode. It appears that Queens and Brooklyn (and some parts of the Bronx) have a higher count of individuals who are only partially vaccinated, compared to Manhattan.
 
 <br> 
 

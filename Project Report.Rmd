@@ -560,8 +560,8 @@ The group members of this project represent diverse fields of public health, inc
 
 
 # Limitations
-Limitations 
-One limitation of our analysis was that the flu and COVID-19 vaccination data did not overlap since we did not have zip code level data for both datasets. Rather, we decided to move forward with separate analyses for flu and COVID-19 data because we believed that this would still be a valuable analysis to understand patterns of flu and COVID-19 vaccine location data. 
-
+One limitation of our analysis was that the flu and COVID-19 cases and vaccination data did not overlap in their level of granularity and in their dates. Due to the availability of the data, we analyzed data both at the borough and ZIP code level, so some comparisons were difficult to make. Additionally, the flu vaccine locations dataset was last updated February 2020 which was prior to when most of the COVID-19 vaccination data was collected. We decided to move forward with separate analyses for flu and COVID-19 data because we believed that this would still be a valuable analysis to understand patterns of flu and COVID-19 vaccine location data. 
 Another limitation of our analysis was that our analysis was based on counts, rather than a percentage of the population. Lastly, we did not have data for the total population, which may limit our ability to make population level conclusions. 
+
+
 
