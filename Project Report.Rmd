@@ -483,6 +483,7 @@ The above bar graph shows the number of locations providing the seasonal flu vac
 
 
 # Additional analysis
+
 ## Clustering analysis
 
 ```{r}
@@ -556,5 +557,5 @@ Our findings indicate that there is much work to be done when it comes to flu an
 The group members of this project represent diverse fields of public health, including epidemiology, biostatistics, public health research methods, and health policy. We all hope to advance health care equity by bridging data science into practice, policy, and health and human rights for all. 
 
 
-# Limitation
+# Limitations
 Flu and covid vaccine data did not overlap, explain
