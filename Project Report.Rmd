@@ -485,6 +485,7 @@ The above bar graph shows the number of locations providing the seasonal flu vac
 <br>
 
 # Additional analysis
+
 ## Clustering analysis
 
 ```{r}
@@ -543,8 +544,20 @@ The number of locations for Flu vaccinations is a bit more densely populated in 
 The K function is used to identify clustering, randomness, or regularity among events in a spatial point pattern. Based on both Ripley K graphs, we see that at all distances, the Lobs(r), which is the observed spatial pattern, is higher than Ltheo(r) , which is the expected random spatial pattern. The Lobs(r) also does not intersect at any point with the expected line. This shows there is statistically significant clustering at smaller distances, displaying a clustering pattern. Due to this clustering pattern, there is not a uniform distribution and we see that there are groups of more COVID and Flu vaccination locations in specific areas while other areas like Staten Island and the parts of Queens are lacking. However, NYCHOH has done a good job on utilizing neighborhood and family owned pharmacies, corporation pharmacies such as Walgreens, as well as  mobile vans (for COVID vaccines), to provide access to the vaccines across NYC. 
  
 # Discussion
-What were your findings? Are they what you expect? What insights into the data can you make?
+The exploratory and clustering analyses of COVID-19 rates and vaccinations in New York City reveal several findings that are important to note. First of all, as we can see from the exploratory analyses, the COVID-19 case, death, and hospitalization counts are higher in Queens, Brooklyn, and the Bronx, with higher counts among men (compared to women), individuals in the 18-44 and 45-64 age groups, and among individuals of color in all five boroughs except for Staten Island. Our exploratory findings highlight and confirm the disparity in COVID-19 disease burden that we have seen across New York City. 
+
+Furthermore, in terms of vaccination, our analysis reveals that the median full-vaccination rate is greater than 75% in all boroughs, with Queens, Manhattan, and Staten Island, with the highest vaccination rates, respectively. Interestingly, while Staten Island had one the highest vaccination rates, it also has the highest COVID-19 case rates compared to all other boroughs. In addition, we found that vaccination counts were highest among whites in three out of five boroughs. This is notably important to address in public health risk communication strategies to attempt to increase vaccine uptake in more vulnerable communities.
+
+Our analysis of the flu vaccinations indicate that Manhattan, Brooklyn, and Queens, respectively, are the boroughs with the highest distribution of seasonal flu vaccination locations. The interactive map of flu vaccine locations across all five boroughs in New York City further reveal the disparities in access to flu vaccines, with Manhattan having by far the largest number of flu vaccination locations, followed by Brooklyn, Queens, Bronx, and Staten Island, respectively. 
+
+Lastly, we conducted a cluster analysis for both flu and COVID-19 vaccine locations to compare the two. The clustering analysis revealed that flu vaccine locations were more prevalent in lower and mid-Manhattan compared the COVID-19 vaccine locations in the same area. Furthermore, we can see that there appear to be more COVID-19 vaccination sites in Queens (especially Far Rockaway) and Brooklyn. This could be due to public health efforts that aimed to reduce disease burden in those neighborhoods/communities since these areas were more severely impacted by COVID-19 compared to other communities. 
+
+Using the K function to determine the statistical significance of our clustering findings, since the Lobs(r) (the observed spatial pattern) does not intersect with the expected line at any point, we have evidence of statistically significant clustering at smaller distances, which displays a clustering pattern. This clustering pattern shows us there is not a uniform distribution of COVID-19 and flu vaccination sites, with certain areas in New York City with a higher concentration of vaccination sites compared to others. Our data confirms that the NYC Health + Hospitals (NYCHOH) has utilized various types of healthcare distribution centers (such as family pharmacies, mobile vans, corporation pharmacies, etc) to provide wide scale access to vaccines in New York City. 
+
+Our findings indicate that there is much work to be done when it comes to flu and vaccine equity in New York City. The disparities in COVID-19 case, death, and hospitalization counts in all five boroughs reveal stark disparities in our city that we, as public health professionals, must work to address. Initiatives to address these health disparities in our city include allocating more resources towards flu and COVID-19 vaccination sites in areas most disproportionately affected by COVID-19 and flu outbreaks. Furthermore, it is imperative to also launch community engagement and educational initiatives to combat misinformation and vaccine hesitancy  in order to ensure that we are promoting public health and health equity for all. 
+
+The group members of this project represent diverse fields of public health, including epidemiology, biostatistics, public health research methods, and health policy. We all hope to advance health care equity by bridging data science into practice, policy, and health and human rights for all. 
 
 
-# Limitation
+# Limitations
 Flu and covid vaccine data did not overlap, explain
