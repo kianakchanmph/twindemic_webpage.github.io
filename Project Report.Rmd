@@ -411,6 +411,8 @@ merged_vax %>%
     title = "Percent fully vaccinated",
     opacity = 1)
 ```
+The interactive map depicts the count of individuals who are fully vaccinated in New York City, categorized by zipcode. Based on the map, we can see that Manhattan and Queens seem to be the areas that have a higher count of individuals who are fully vaccinated. It appears that the Bronx and Brooklyn have a much lower count of individuals who are fully vaccinated. 
+
 
 ## Interactive Map of Partial Vaccination by Zipcode in NYC
 
@@ -424,7 +426,7 @@ merged_vax %>%
     title = "Percent partially vaccinated",
     opacity = 1)
 ```
-
+The interactive map depicts the count of individuals who are partially vaccinated in New York City, categorized by zipcode. It appears that Queens and Brooklyn (and some parts of the Bronx) have a higher count of individuals who are only partially vaccinated, compared to Manhattan. 
 <br> 
 
 # We then took a look at our flu data:
@@ -464,6 +466,7 @@ flu_vaxx_byboro =
  
 
 ## Exploratory Analysis
+
 ```{r}
 ggplot(flu_vaxx_byboro, aes(x = borough, y = n_loc_boro, fill = borough)) +
   geom_bar(stat = "identity") +
