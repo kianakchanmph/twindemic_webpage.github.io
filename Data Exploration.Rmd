@@ -208,13 +208,6 @@ caserate_by_boro_plot =
 caserate_by_boro_plot
 ```
 
-COVID-19 
-<<<<<<< HEAD
-
-<br> 
-=======
-<br></br>
->>>>>>> cb00da2d3f6599185c9ab6c712c55fe64863bef8
 
 This plot shows the weekly case rate by NYC borough, beginning the week starting on August 9, 2020. The plot shows a similar trend in weekly rates across all 5 boroughs. Cases peaked for all boroughs from January through February of 2021. Boroughs experienced a smaller peak in cases in April 2021. Thereafter, case rates were significantly lower from April 2021 onwards, coinciding with the period of eligibility for NYC adults to be vaccinated against Covid-19. 
 
@@ -354,45 +347,18 @@ full_vax_plot
 
 <br> 
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE}
-partial_vax_plot =
-  vax_by_zip_adults_df %>% 
-  filter(perc_partially < 30) %>% 
-  ggplot(aes(x = boro, y = perc_partially, fill = boro)) +
-  geom_boxplot() +
-  labs(
-    title = "Percent adults partially vaccinated by borough, as of 12/7/2021",
-    x = "",
-    y = "Percent partially vaccinated"
-  )
 
-full_vax_plot =
-  vax_by_zip_adults_df %>% 
-  filter(perc_fully < 100) %>% 
-  ggplot(aes(x = boro, y = perc_fully, fill = boro)) +
-  geom_boxplot() +
-  labs(
-    title = "Percent adults fully vaccinated by borough, as of 12/7/2021",
-    x = "",
-    y = "Percent fully vaccinated"
-  )
-
-partial_vax_plot
-full_vax_plot
-```
 
 These plots show the percent of adults partially and fully vaccinated by borough, as of December 2021. The partially vaccinated plot excluded outliers greater than 30% and the fully vaccinated plot excluded outliers greater than 100%, as they were not representative of the dataset and may have been included erroneously. The median full-vaccination rate is greater than 75% for each borough, with Queens, Manhattan, and Staten Island having the highest full-vaccination rates, respectively. Interestingly, while Staten Island has one of the higher vaccination rates, it is consistently the borough with the highest case rate out of all the boroughs. When we examine the partially and fully vaccinated rates cumulatively, each borough is at least 80% vaccinated. 
 
 <br> 
 
-<<<<<<< HEAD
 ### We then took a look at our flu data:
 =======
 On completing exploratory analyses of Covid related data, we then took a look at our flu data:
 
 <br> 
 
->>>>>>> 3c4bf33e3418beb38495fc47dfe5785c95b1a51d
 Loading NYC Locations Providing Seasonal Flu Vaccinations/ Emergency Department Visits and Admissions for Influenza-like Illness/ Census Selected Social Characteristics
 
 ```{r, message = FALSE, warning = FALSE}
@@ -445,10 +411,9 @@ The above bar graph shows the number of locations providing the seasonal flu vac
 
 ## Interactive Map of Flu Vaccine Locations Across Five Boroughs in NYC
 
-<<<<<<< Updated upstream
-=======
+
 ## Merge data and try to make a leaflet
->>>>>>> Stashed changes
+
 ```{r}
 merged_vax = left_join(vax_by_zip_adults_df, zip_lat_lon, by = "zipcode")
 ```
