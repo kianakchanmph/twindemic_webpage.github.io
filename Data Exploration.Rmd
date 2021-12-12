@@ -354,7 +354,7 @@ These plots show the percent of adults partially and fully vaccinated by borough
 <br> 
 
 ### We then took a look at our flu data:
-=======
+
 On completing exploratory analyses of Covid related data, we then took a look at our flu data:
 
 <br> 
@@ -411,9 +411,6 @@ The above bar graph shows the number of locations providing the seasonal flu vac
 
 ## Interactive Map of Flu Vaccine Locations Across Five Boroughs in NYC
 
-
-## Merge data and try to make a leaflet
-
 ```{r}
 merged_vax = left_join(vax_by_zip_adults_df, zip_lat_lon, by = "zipcode")
 ```
@@ -429,6 +426,8 @@ merged_vax %>%
     opacity = 1)
 ```
 
+The interactive map depicts the count of individuals who are fully vaccinated in New York City, categorized by zipcode. Based on the map, we can see that Manhattan and Queens seem to be the areas that have a higher count of individuals who are fully vaccinated. It appears that the Bronx and Brooklyn have a much lower count of individuals who are fully vaccinated. 
+
 ```{r, message=FALSE}
 pal = colorFactor("viridis", NULL)
 merged_vax %>%
@@ -439,5 +438,4 @@ merged_vax %>%
     title = "Percent partially vaccinated",
     opacity = 1)
 ```
-
-The above maps show the percentages of fully and partially vaccinated populations by zip code - the maps provide a more granular assessment of the distribution of vaccinated populations by how many doses of respective vaccination types they have received. 
+The interactive map depicts the count of individuals who are partially vaccinated in New York City, categorized by zipcode. It appears that Queens and Brooklyn (and some parts of the Bronx) have a higher count of individuals who are only partially vaccinated, compared to Manhattan. 
