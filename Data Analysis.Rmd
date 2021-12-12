@@ -9,7 +9,7 @@ output:
 
 
 # Clustering analysis
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 library(maptools)
 library(spatstat)
 library(sf)
@@ -22,19 +22,19 @@ knitr::opts_chunk$set(
 ```
 
 ## FLU CLUSTERING
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 mydata <- read.csv("./data/NYC_Flu_locations.csv")
 NYC_Flu_Locations <- ppp(mydata[,13], mydata[,12], c(-74.23442287,-73.68843386), c(40.51789347,40.90856191))
 plot(NYC_Flu_Locations)
 ```
 
 # This is running the K function test
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 L <- envelope(NYC_Flu_Locations, Lest, nsim = 10, rank = 2, global = T)
 ```
 
 # Plot L function with Main Title and x-/y-axis labels
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 plot(L, 
      main = "NYC Flu Locations Clustering Results", 
      ylab = "Density Function",
@@ -43,17 +43,17 @@ plot(L,
 
 
 ## COVID CLUSTERING
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 mydata2 <- read.csv("./data/COVID_NYC_locations_1.csv") 
 NYC_COVID_Locations <- ppp(mydata2[,6], mydata2[,5], c(-74.23538,-73.71330), c(40.51695749,40.90388332))
 plot(NYC_COVID_Locations)
 ```
 
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 L <- envelope(NYC_COVID_Locations, Lest, nsim = 10, rank = 2, global = T)
 ```
 
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 plot(L, 
      main = "NYC COVID Vaccine Locations Clustering Results", 
      ylab = "Density Function",
