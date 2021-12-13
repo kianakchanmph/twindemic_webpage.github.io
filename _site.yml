@@ -10,7 +10,7 @@ navbar:
     - text: "Project Report"
       href: Project-Report.html
     - icon: fa-youtube
-      href: https://www.youtube.com/watch?v=gd0XgdkEaVo
+      href: https://www.youtube.com/watch?v=c2WBMT6cCdc
     - icon: fa-github fa-lg
       href: https://github.com/kianakchanmph/twindemic_webpage.github.io.git
 output:
